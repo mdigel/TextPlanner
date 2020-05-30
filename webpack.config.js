@@ -1,11 +1,20 @@
 const path = require('path');
 
 module.exports = {
-  entry: './client/index.js',
+  entry: {
+    src: './client/index.js',
+  },
   output: {
-    path: path.resolve(__dirname,'build'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-  }
+  },
+  devServer: {
+    publicPath: '/build',
+    contentBase: path.resolve(__dirname, './client'),
+    // proxy: {
+    //   '/': 'http://localhost:8080/client/index.html',
+    // },
+  },
 
   mode: process.env.NODE_ENV,
 
@@ -24,12 +33,12 @@ module.exports = {
       {
         test: /.(css|scss)$/,
         exclude: /(node_modules)/,
-        use: ['style-loader', 'css-loader','sass-loader'],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
-    ]
-  }
+    ],
+  },
   resolve: {
     // Enable importing JS / JSX files without specifying their extension
     extensions: ['.js', '.jsx'],
   },
-}
+};
