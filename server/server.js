@@ -8,6 +8,13 @@ const apiRouter = require('./routes.js');
 
 const PORT = 3000;
 
+/**
+ * handle parsing request body
+ */
+const mongoose = require('./models.js');
+
+console.log(mongoose);
+
 
 /**
  * handle parsing request body
@@ -15,9 +22,14 @@ const PORT = 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// maybe need this for serving???
-// app.use(express.static('../client/', { index: 'index.html' }));
+/**
+ * define route handlers
+ */
+app.use('/api', apiRouter);
 
+/**
+ * serve up static files in production
+ */
 if (process.env.NODE_ENV === 'production') {
   // serve bundle.js
   app.use('/build', express.static(path.join(__dirname, '../build')));
@@ -34,10 +46,11 @@ app.use((err, req, res, next) => {
   const defaultErr = {
     log: 'Express error handler caught unknown middleware error',
     status: 400,
-    message: { err: 'An error occurred' },
+    // message: { err: 'An error occurred' },
+    message: err,
   };
   const errorObj = { ...defaultErr, ...err };
-  console.log(errorObj.log);
+  console.log(errorObj);
   return res.status(errorObj.status).json(errorObj.message);
 });
 
@@ -50,4 +63,3 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
-

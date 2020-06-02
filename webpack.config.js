@@ -11,9 +11,9 @@ module.exports = {
   devServer: {
     publicPath: '/build',
     contentBase: path.resolve(__dirname, './client'),
-    // proxy: {
-    //   '/': 'http://localhost:8080/client/index.html',
-    // },
+    proxy: {
+      '/api': 'http://localhost:3000/',
+    },
   },
 
   mode: process.env.NODE_ENV,
