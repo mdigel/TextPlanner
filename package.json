@@ -24,14 +24,18 @@
     "body-parser": "^1.19.0",
     "concurrently": "^5.2.0",
     "express": "^4.17.1",
+    "fetch-action-creator": "^2.0.4",
     "mongoose": "^5.9.16",
     "node-fetch": "^2.6.0",
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hot-loader": "^4.12.21",
+    "react-redux": "^7.2.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
     "webpack": "^4.43.0"
   },
   "devDependencies": {

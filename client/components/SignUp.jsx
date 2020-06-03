@@ -1,23 +1,38 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
-class SignUp extends Component {
-  // logic
+// class SignUpComponent extends Component {
+const SignUpComponent = (props) => (
 
-  render() {
-    return (
-      <div>
-        <h2>Sign Up</h2>
-        <form method="POST" action="/api/signup">
+  <div>
+    {/* <form method="POST" action="/api/login">
           <input name="username" type="text" placeholder="username" />
           <input name="password" type="password" placeholder="password" />
-          <button type="submit" value="Create User"> Submit </button>
-        </form>
-        <Link to="/">Sign In</Link>
-      </div>
-    );
-  }
-}
+          <input type="submit" value="login" />
+        </form> */}
 
-export default SignUp;
+    <form onSubmit={() => props.onSubmit(props.userName, props.password)}>
+      <h2>Sign Up Below!</h2>
+      <input
+        type="text"
+        name="userName"
+        placeholder="Enter Username"
+        value={props.userName}
+        onChange={props.handleInputChange_Username}
+        required
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter password"
+        value={props.password}
+        onChange={props.handleInputChange_Password}
+        required
+      />
+      <input type="submit" value="Submit" />
+    </form>
+
+  </div>);
+
+
+export default SignUpComponent;

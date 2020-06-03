@@ -61,7 +61,7 @@ controllers.verifyUser = (req, res, next) => {
         .then((isMatch) => {
           if (!isMatch) {
             console.log('incorrect password!!!');
-            res.redirect('/signup');
+            // res.redirect('/signup');
           } else {
             console.log('correct password!!!');
             res.redirect('/events');

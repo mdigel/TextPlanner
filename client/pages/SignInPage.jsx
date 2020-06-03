@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import { Switch, Link } from 'react-router-dom';
 
+// Components
+import Login from '../components/loginIn';
 
 class SignIn extends Component {
   // logic
@@ -9,12 +11,8 @@ class SignIn extends Component {
   render() {
     return (
       <div>
-        <h2>Sign In</h2>
-        <form method="POST" action="/api/login">
-          <input name="username" type="text" placeholder="username" />
-          <input name="password" type="password" placeholder="password" />
-          <input type="submit" value="login" />
-        </form>
+        <h1>Sign In</h1>
+        <Login />
         <Link to="/signup">Sign Up</Link>
       </div>
     );

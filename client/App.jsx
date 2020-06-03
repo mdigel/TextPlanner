@@ -8,9 +8,9 @@ import {
   Link,
 } from 'react-router-dom';
 
-import SignUp from './components/SignUp';
-import SignIn from './components/SignIn';
-import Events from './components/Events';
+import SignUp from './pages/SignUpPage';
+import SignIn from './pages/SignInPage';
+import Events from './pages/EventsPage';
 
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -22,9 +22,8 @@ class App extends Component {
 
   render() {
     return (
-    // state logic
     <Router>
-      <div>
+      <div id="MainContainer">
         <nav>
           <ul>
             <li>
