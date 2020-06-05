@@ -23,10 +23,12 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^5.2.0",
+    "css-loader": "^3.5.3",
     "express": "^4.17.1",
     "fetch-action-creator": "^2.0.4",
     "mongoose": "^5.9.16",
     "node-fetch": "^2.6.0",
+    "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -36,6 +38,8 @@
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
     "webpack": "^4.43.0"
   },
   "devDependencies": {

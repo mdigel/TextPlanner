@@ -1,3 +1,4 @@
+/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import { Switch } from 'react-router-dom';
 
@@ -5,7 +6,15 @@ class Events extends Component {
   // logic
 
   render() {
-    return <h2>Events</h2>;
+    return (
+      <div id="EventsPage">
+        <div id="EventsPage_Container">
+          <h1>Welcome</h1>
+          <Events />
+
+        </div>
+      </div>
+    );
   }
 }
 

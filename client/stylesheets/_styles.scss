@@ -1,0 +1,166 @@
+html, body, #root, #MainContainer {
+  height: 100%;
+}
+
+body, #root, #MainContainer {
+  margin: 0px;
+}
+
+
+#MainContainer {
+ 
+  h1 {
+    color: white;
+    font-family: $h1-font-family;
+    font-weight: $h1-font-weight;
+    margin-bottom: 5px;
+    text-align:center;
+    margin-top: 0px;
+  }
+
+  h2 {
+    color: white;
+    font-family: $h2-font-family;
+    font-weight: $h2-font-weight;
+    font-size: 14px;
+    margin-top: 0px;
+    text-align: center;
+  }
+
+  #link{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+      a {
+          display: inline-block;
+          color: white;
+          font-family: $h2-font-family;
+          font-weight: $h2-font-weight;
+          text-align: center;
+        }
+}
+/**
+* Sign In Page
+*
+**/
+
+  #SignInPage {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+
+    height: 100%;
+   background: -webkit-linear-gradient( to left top, blue, red);
+        background: -moz-linear-gradient( to left top, blue, red);
+        background: -ms-linear-gradient( to left top, blue, red);
+        background: -o-linear-gradient( to left top, blue, red);
+        background: linear-gradient( to left top, blue, red);
+
+    #SignInPage_Container {
+  
+        
+        
+    }
+  }
+
+  #input_Container{
+    display: flex;
+    justify-content: center;
+        input {
+          border: 2px solid white;
+          border-radius: 5px;
+          height: 20px;
+          margin-right: 5px ;
+          margin-left: 5px;
+          margin-top: 10px;
+        }
+  }
+
+  #submitContainer{
+    display: flex;
+    justify-content: center;
+      .submit {
+        display: inline-block;
+        font-family: $h1-font-family;
+        font-weight: $btn-font-weight;
+        font-size: medium;
+        color: white;
+        text-align: center;
+        white-space: white;
+        vertical-align: middle;
+        background-color: $btn-body-color;
+        border: 2px solid transparent;
+        transition-duration: .3s;
+        padding: 7px 50px 7px 50px;
+        margin-top: 15px;
+        border-radius: 20px;
+  
+        &:hover {
+          background-color: #1ED760;
+          text-decoration: none;
+          cursor: pointer;
+          }
+      }
+  }
+
+}
+
+/**
+* SignUp Page
+*
+**/
+
+#SignUpPage {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+   height: 100%;
+  background: -webkit-linear-gradient( to left top, blue, red);
+       background: -moz-linear-gradient( to left top, blue, red);
+       background: -ms-linear-gradient( to left top, blue, red);
+       background: -o-linear-gradient( to left top, blue, red);
+       background: linear-gradient( to left top, blue, red);
+
+   #SignUpPage_Container {
+ 
+       
+       
+   }
+ }
+
+ #SignUpPage {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+   height: 100%;
+  background: -webkit-linear-gradient( to left top, blue, red);
+       background: -moz-linear-gradient( to left top, blue, red);
+       background: -ms-linear-gradient( to left top, blue, red);
+       background: -o-linear-gradient( to left top, blue, red);
+       background: linear-gradient( to left top, blue, red);
+
+   #SignUpPage_Container {
+ 
+       
+       
+   }
+ }
+
+
+
+#EventsPage {
+
+  #EventsPage_Container{
+      h1 {
+        color: black;
+        font-family: $h1-font-family;
+        font-weight: $h1-font-weight;
+        margin-top: 20px;
+        margin-left: 20px;
+        text-align: left;
+
+        }
+  }
+}

@@ -24,7 +24,7 @@ class App extends Component {
     return (
     <Router>
       <div id="MainContainer">
-        <nav>
+        {/* <nav>
           <ul>
             <li>
               <Link to="/">Sign In</Link>
@@ -36,8 +36,8 @@ class App extends Component {
               <Link to="/events">Events</Link>
             </li>
           </ul>
-        </nav>
-
+        </nav> */}
+{/* <div id="header" /> */}
         <Switch>
           <Route path="/events">
             <Events />

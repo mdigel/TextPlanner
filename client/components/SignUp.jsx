@@ -5,31 +5,35 @@ import React, { Component } from 'react';
 const SignUpComponent = (props) => (
 
   <div>
-    {/* <form method="POST" action="/api/login">
-          <input name="username" type="text" placeholder="username" />
-          <input name="password" type="password" placeholder="password" />
-          <input type="submit" value="login" />
-        </form> */}
 
-    <form onSubmit={() => props.onSubmit(props.userName, props.password)}>
-      <h2>Sign Up Below!</h2>
-      <input
-        type="text"
-        name="userName"
-        placeholder="Enter Username"
-        value={props.userName}
-        onChange={props.handleInputChange_Username}
-        required
-      />
-      <input
-        type="password"
-        name="password"
-        placeholder="Enter password"
-        value={props.password}
-        onChange={props.handleInputChange_Password}
-        required
-      />
-      <input type="submit" value="Submit" />
+    <form onSubmit={(e) => {
+      const userName = e.target[0].value;
+      const password = e.target[1].value;
+      props.onSubmit(e, userName, password);
+    }}
+    >
+      <div id="input_Container">
+        <input
+          type="text"
+          name="userName"
+          placeholder="Create username"
+          value={props.userName}
+          onChange={(e) => props.handleInputChange_Username(e)}
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Create password"
+          value={props.password}
+          onChange={(e) => props.handleInputChange_Password(e)}
+          required
+        />
+      </div>
+
+      <div id="submitContainer">
+        <input className="submit" type="submit" value="Create Account" />
+      </div>
     </form>
 
   </div>);

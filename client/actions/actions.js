@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /**
  * ************************************
  *
@@ -18,7 +19,7 @@ import * as types from '../constants/actionTypes';
  */
 export const handleInputChange_Username = (newUserName) => {
   console.log('in userName action');
-  ({
+  return ({
     type: types.SET_USERNAME,
     payload: newUserName,
   });
@@ -26,16 +27,32 @@ export const handleInputChange_Username = (newUserName) => {
 
 export const handleInputChange_Password = (newPassword) => {
   console.log('in password action');
-  ({
+  return ({
     type: types.SET_PASSWORD,
     payload: newPassword,
   });
 };
 
 /**
- * Fetch Actions
+ * Route Actions
  *
  */
+
+export const redirectSignUp = (signInRedirect) => {
+  console.log('in redirectSignUp');
+  return ({
+    type: types.SIGNUP_REDIRECT,
+    payload: signInRedirect,
+  });
+};
+
+export const redirectSignIn = (signUpRedirect) => {
+  console.log('in redirectSignIn');
+  return ({
+    type: types.SIGNIN_REDIRECT,
+    payload: signUpRedirect,
+  });
+};
 
 
 /**

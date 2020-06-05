@@ -14,6 +14,7 @@ module.exports = {
     proxy: {
       '/api': 'http://localhost:3000/',
     },
+    historyApiFallback: true,
   },
 
   mode: process.env.NODE_ENV,
@@ -31,7 +32,7 @@ module.exports = {
         },
       },
       {
-        test: /.(css|scss)$/,
+        test: /.(css|scss|sass)$/,
         exclude: /(node_modules)/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },

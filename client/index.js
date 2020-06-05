@@ -13,11 +13,11 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
+import styles from './stylesheets/application.scss';
 import App from './App';
 import store from './store';
 
 // might need to import styles here
-// import styles from './scss/application.scss';
 
 render(
   <Provider store={store}>

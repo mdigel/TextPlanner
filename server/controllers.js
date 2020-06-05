@@ -16,7 +16,7 @@ controllers.createUser = (req, res, next) => {
   console.log('req.body', req.body);
 
   const newUser = {
-    userName: req.body.username,
+    userName: req.body.userName,
     password: req.body.password,
   };
 
@@ -34,11 +34,14 @@ controllers.createUser = (req, res, next) => {
     .catch((errFromMongoose) => {
       console.log('error when creating a user in mongo');
 
+      // username already exits
       if (errFromMongoose.code === 11000) {
         res.locals.err = 'This username is already taken';
+        next();
+      } else {
+        // other mongo error
+        next(errFromMongoose);
       }
-
-      next();
     });
 };
 
@@ -47,32 +50,34 @@ controllers.verifyUser = (req, res, next) => {
   console.log('req.body', req.body);
 
   // write code here
-  const userName = req.body.username;
+  const { userName } = req.body;
   const userPasswordAttempt = req.body.password;
 
-
+  console.log('userName', userName);
   // confirm if user is in DB
   models.User.find({ userName })
     .then((foundUser) => {
       // 2. if it is -compare password
       // if (userPasswordAttempt === foundUser[0].password) {
+      console.log('foundUser', foundUser);
       bcrypt.compare(userPasswordAttempt, foundUser[0].password)
 
         .then((isMatch) => {
           if (!isMatch) {
             console.log('incorrect password!!!');
-            // res.redirect('/signup');
+            res.locals.auth = false;
+            next();
           } else {
             console.log('correct password!!!');
-            res.redirect('/events');
+            res.locals.auth = true;
+            next();
           }
         })
         .catch((err) => next(err));
     })
 
     .catch((errFromMongoose) => {
-      res.locals.err = 'This username doesn\'t exists';
-      next();
+      next(errFromMongoose);
     });
 };
 

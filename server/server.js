@@ -27,6 +27,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
  */
 app.use('/api', apiRouter);
 
+app.get('/*', (req, res) => {
+  console.log('get request...');
+  res.status(200).sendFile(path.resolve(__dirname, '../client/index.html'));
+});
+
 /**
  * serve up static files in production
  */
