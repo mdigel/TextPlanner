@@ -1,5 +1,7 @@
+/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import EventCreator from '../components/eventCreator';
+import EventResponses from '../components/eventResponses';
 
 class EventCreatorPage extends Component {
   // logic
@@ -10,6 +12,8 @@ class EventCreatorPage extends Component {
         <div id="EventCreatorPage_Container">
           <h1>Create an Event</h1>
           <EventCreator />
+          <hr />
+          <EventResponses />
         </div>
       </div>
     );

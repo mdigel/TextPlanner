@@ -168,15 +168,16 @@ body, #root, #MainContainer {
 
 #EventCreatorPage {
   height:100%;
-  background: -webkit-linear-gradient( to left top, lightgrey, black);
-       background: -moz-linear-gradient( to left top, lightgrey, black);
-       background: -ms-linear-gradient( to left top, lightgrey, black);
-       background: -o-linear-gradient( to left top, lightgrey, black);
-       background: linear-gradient( to left top, lightgrey, black);
+  background-color: white;
+  // background: -webkit-linear-gradient( to left top, lightgrey, black);
+  //      background: -moz-linear-gradient( to left top, lightgrey, black);
+  //      background: -ms-linear-gradient( to left top, lightgrey, black);
+  //      background: -o-linear-gradient( to left top, lightgrey, black);
+  //      background: linear-gradient( to left top, lightgrey, black);
 
   #EventCreatorPage_Container{
       h1 {
-        color: white;
+        color: black;
         font-family: $h1-font-family;
         font-weight: $h1-font-weight;
         margin-top: 20px;
@@ -184,6 +185,10 @@ body, #root, #MainContainer {
         text-align: center;
 
         }
+
+      input {
+        border: 2px solid black;
+      }
 
         form {
           display:flex;
@@ -200,7 +205,7 @@ body, #root, #MainContainer {
           justify-content: center;
         
         #MessageField {
-          border: 2px solid white;
+          border: 2px solid black;
           border-radius: 5px;
           height: 200px;
           width: 500px;
@@ -212,6 +217,28 @@ body, #root, #MainContainer {
 
         #MessageField::-webkit-input-placeholder {
           font-style: italic
+        }
+      }
+
+      #phoneNumber_Container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        input {
+          border: 2px solid black;
+          border-radius: 5px;
+          height: 20px;
+          margin-right: 5px ;
+          margin-left: 5px;
+          margin-top: 10px;
+        }
+
+        img {
+          margin-top: 10px;
+          width: 20px;
+          height: 20px;
+          margin-left: 55px;
         }
       }
       
@@ -230,15 +257,6 @@ body, #root, #MainContainer {
       }
 
       #SaveEvent-btn-Container {
-        display: flex;
-        justify-content: center;
-        a {
-          text-decoration: none;
-          color: white;
-        }
-      }
-
-      #SaveMessage-btn-Container {
         display: flex;
         justify-content: center;
         a {
