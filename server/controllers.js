@@ -3,6 +3,12 @@
 const bcrypt = require('bcryptjs');
 const models = require('./models.js');
 
+const accountSid = 'AC6c40de64d3fab9b66bd171475906d9e1';
+const authToken = '3eb57596b1c11d44bbf1a572d4e95300';
+const client = require('twilio')(accountSid, authToken);
+const { MessagingResponse } = require('twilio').twiml;
+
+
 const controllers = {};
 
 controllers.createUser = (req, res, next) => {
@@ -81,6 +87,48 @@ controllers.verifyUser = (req, res, next) => {
     });
 };
 
+controllers.sendText = (req, res, next) => {
+  console.log('req.body', req.body);
+
+  const phoneNumbersArray = req.body.phoneNumbers;
+  const { message } = req.body;
+
+  phoneNumbersArray.forEach((el) => {
+    // twilio
+    client.messages
+      .create({
+        body: message,
+        from: '+12057109318',
+        to: el,
+      })
+      .then((message) => console.log(message.sid));
+  });
+
+
+  next();
+};
+
+// Run this command to set up Twilio webhook: twilio phone-numbers:update "+12057109318" --sms-url="http://localhost:3000/sms"
+
+controllers.recieveText = (req, res, next) => {
+  console.log('req.body', req.body);
+
+  const messageInfo = {
+    from: req.body.From,
+    message: req.body.Body,
+  };
+  res.locals = messageInfo;
+  // res.locals = req.body.From;
+
+  // const twiml = new MessagingResponse();
+  // twiml.message('The Robots are coming! Head for the hills!');
+  // res.writeHead(200, { 'Content-Type': 'text/xml' });
+  // res.end(twiml.toString());
+
+  next();
+};
+
+
 // controllers.setCookie = (req, res, next) => {
 //   console.log('in setCookie Middleware');
 //   console.log('res.locals.id in setSSIDCookie', res.locals.id);
@@ -109,5 +157,6 @@ controllers.verifyUser = (req, res, next) => {
 //       next();
 //     });
 // };
+
 
 module.exports = controllers;

@@ -11,6 +11,7 @@ import {
 import SignUp from './pages/SignUpPage';
 import SignIn from './pages/SignInPage';
 import Events from './pages/EventsPage';
+import EventCreator from './pages/EventCreatorPage';
 
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -39,6 +40,9 @@ class App extends Component {
         </nav> */}
 {/* <div id="header" /> */}
         <Switch>
+        <Route path="/eventcreator">
+            <EventCreator />
+          </Route>
           <Route path="/events">
             <Events />
           </Route>

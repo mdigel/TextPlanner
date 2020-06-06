@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 const apiRouter = require('./routes.js');
+const smsRouter = require('./routes_sms.js');
 
 const PORT = 3000;
 
@@ -26,11 +27,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
  * define route handlers
  */
 app.use('/api', apiRouter);
+app.use('/sms', smsRouter);
 
 app.get('/*', (req, res) => {
   console.log('get request...');
   res.status(200).sendFile(path.resolve(__dirname, '../client/index.html'));
 });
+
 
 /**
  * serve up static files in production

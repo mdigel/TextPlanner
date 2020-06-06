@@ -31,7 +31,7 @@ const Login = (props) => (
         />
       </div>
       <div id="submitContainer">
-        <input className="submit" type="submit" value="Login" />
+        <input className="button" type="submit" value="Login" />
       </div>
     </form>
   </div>

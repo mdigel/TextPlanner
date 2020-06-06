@@ -79,27 +79,29 @@ body, #root, #MainContainer {
   #submitContainer{
     display: flex;
     justify-content: center;
-      .submit {
-        display: inline-block;
-        font-family: $h1-font-family;
-        font-weight: $btn-font-weight;
-        font-size: medium;
-        color: white;
-        text-align: center;
-        white-space: white;
-        vertical-align: middle;
-        background-color: $btn-body-color;
-        border: 2px solid transparent;
-        transition-duration: .3s;
-        padding: 7px 50px 7px 50px;
-        margin-top: 15px;
-        border-radius: 20px;
-  
-        &:hover {
-          background-color: #1ED760;
-          text-decoration: none;
-          cursor: pointer;
-          }
+     
+  }
+
+  .button {
+    display: inline-block;
+    font-family: $h1-font-family;
+    font-weight: $btn-font-weight;
+    font-size: medium;
+    color: white;
+    text-align: center;
+    white-space: white;
+    vertical-align: middle;
+    background-color: $btn-body-color;
+    border: 2px solid transparent;
+    transition-duration: .3s;
+    padding: 7px 50px 7px 50px;
+    margin-top: 15px;
+    border-radius: 20px;
+
+    &:hover {
+      background-color: #1ED760;
+      text-decoration: none;
+      cursor: pointer;
       }
   }
 
@@ -129,25 +131,10 @@ body, #root, #MainContainer {
    }
  }
 
- #SignUpPage {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-   height: 100%;
-  background: -webkit-linear-gradient( to left top, blue, red);
-       background: -moz-linear-gradient( to left top, blue, red);
-       background: -ms-linear-gradient( to left top, blue, red);
-       background: -o-linear-gradient( to left top, blue, red);
-       background: linear-gradient( to left top, blue, red);
-
-   #SignUpPage_Container {
- 
-       
-       
-   }
- }
-
+ /**
+* Events Page
+*
+**/
 
 
 #EventsPage {
@@ -162,5 +149,102 @@ body, #root, #MainContainer {
         text-align: left;
 
         }
+
+      #createEvent {
+        margin-left: 15px;
+
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+  }
+}
+
+/**
+* Event Creator Page
+*
+**/
+
+#EventCreatorPage {
+  height:100%;
+  background: -webkit-linear-gradient( to left top, lightgrey, black);
+       background: -moz-linear-gradient( to left top, lightgrey, black);
+       background: -ms-linear-gradient( to left top, lightgrey, black);
+       background: -o-linear-gradient( to left top, lightgrey, black);
+       background: linear-gradient( to left top, lightgrey, black);
+
+  #EventCreatorPage_Container{
+      h1 {
+        color: white;
+        font-family: $h1-font-family;
+        font-weight: $h1-font-weight;
+        margin-top: 20px;
+        margin-left: 20px;
+        text-align: center;
+
+        }
+
+        form {
+          display:flex;
+          flex-direction: column;
+          
+        }
+
+        #PhoneNumberField {
+          width: 350px;
+        }
+
+        #MessageContainer {
+          display: flex;
+          justify-content: center;
+        
+        #MessageField {
+          border: 2px solid white;
+          border-radius: 5px;
+          height: 200px;
+          width: 500px;
+          margin-right: 5px ;
+          margin-left: 5px;
+          margin-top: 10px;
+         
+        }
+
+        #MessageField::-webkit-input-placeholder {
+          font-style: italic
+        }
+      }
+      
+      
+        #SendMessage-btn-Container {
+          display: flex;
+          justify-content: center;
+        input {
+          background-color: lightcoral;
+          width: 300px;
+        }        
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+
+      #SaveEvent-btn-Container {
+        display: flex;
+        justify-content: center;
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+
+      #SaveMessage-btn-Container {
+        display: flex;
+        justify-content: center;
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
   }
 }

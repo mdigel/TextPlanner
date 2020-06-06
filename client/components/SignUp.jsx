@@ -32,7 +32,7 @@ const SignUpComponent = (props) => (
       </div>
 
       <div id="submitContainer">
-        <input className="submit" type="submit" value="Create Account" />
+        <input className="button" type="submit" value="Create Account" />
       </div>
     </form>
 

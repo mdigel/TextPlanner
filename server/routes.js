@@ -16,5 +16,10 @@ router.post('/login', controllers.verifyUser, (req, res) => {
   else if (res.locals.auth) res.status(200).send('Welcome');
 });
 
+// send text messages
+router.post('/sendtexts', controllers.sendText, (req, res) => {
+  res.send('send text!');
+});
+
 
 module.exports = router;
