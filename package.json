@@ -27,7 +27,7 @@
     "express": "^4.17.1",
     "fetch-action-creator": "^2.0.4",
     "mongoose": "^5.9.16",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
