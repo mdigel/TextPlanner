@@ -24,7 +24,7 @@
     "body-parser": "^1.19.0",
     "concurrently": "^5.2.0",
     "css-loader": "^3.5.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "fetch-action-creator": "^2.0.4",
     "mongoose": "^5.9.16",
     "node-fetch": "^2.6.0",
