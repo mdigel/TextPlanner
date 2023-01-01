@@ -23,7 +23,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^5.2.0",
-    "css-loader": "^3.5.3",
+    "css-loader": "^6.7.3",
     "express": "^4.17.1",
     "fetch-action-creator": "^2.0.4",
     "mongoose": "^5.9.16",
@@ -32,25 +32,25 @@
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-hot-loader": "^4.12.21",
+    "react-hot-loader": "^4.13.1",
     "react-redux": "^7.2.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
-    "sass-loader": "^8.0.2",
+    "sass-loader": "^13.2.0",
     "style-loader": "^1.2.1",
     "twilio": "^3.45.0",
     "twilio-cli": "^2.2.0",
-    "webpack": "^4.43.0"
+    "webpack": "^5.75.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.1",
     "@babel/preset-env": "^7.10.1",
     "@babel/preset-react": "^7.10.1",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "^8.3.0",
     "cross-env": "^7.0.2",
-    "webpack-cli": "^3.3.11",
+    "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^3.11.0"
   }
 }
